@@ -86,7 +86,7 @@ body {
       position: absolute;
       top: 70px; /* Adjust based on your navbar height */
       left: 0;
-      background: rgba(255, 255, 255, 0.1); /* Translucent background */
+      background: rgba(32, 32, 32, 0.438); /* Translucent background */
       backdrop-filter: blur(15px); /* Glassmorphic effect */
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -127,11 +127,32 @@ body {
 }
 
 .hero-content {
-  max-width: 600px;
-  backdrop-filter: blur(10px); /* Glassmorphic effect */
-  padding: 20px;
-  border-radius: 15px;
-  /* background: rgba(0, 0, 0, 0.3); */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-image{
+  flex: 1;
+  text-align: right; 
+}
+
+
+.hero-image img {
+width: 100%;
+max-width: 600px;
+border-radius: 10px;
+/* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+margin-top: 50px;
+
+
 }
 
 .hero h1 {
@@ -145,6 +166,21 @@ body {
   margin-bottom: 30px;
   /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); */
 }
+
+@media screen and (max-width: 768px) {
+  .hero-content{
+     display: block;
+  }
+
+  .hero-text {
+     width: 100%;
+  }
+
+  .hero-image {
+     width: 100%;
+  }
+}
+
 
 /* .cta-button {
   background-color: #00c3ff;
@@ -184,11 +220,11 @@ body {
 	border-radius: var(--border-radius);
 	background-image: conic-gradient(
 		#488cfb,
-		#29dbbc,
-		#ddf505,
-		#ff9f0e,
-		#e440bb,
-		#655adc,
+		#79d6c7,
+		#ecf792,
+		#fddfb1,
+		#e09fd0,
+		#aeaae0,
 		#488cfb
 	);
 
@@ -277,8 +313,8 @@ body {
 
 .about-image img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* border-radius: 10px; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
   margin-top: 50px;
   
 }

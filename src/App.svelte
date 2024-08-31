@@ -55,13 +55,19 @@
 <!-- #hero -->
     <section class="hero">
       <div class="hero-content">
+        <div class="hero-text">
           <h1 style="font-family:'Raleway'">Welcome to</h1>
-          <h1 style="font-family:Raleway; color:cyan; font-size:64px" >Creative Connect</h1>
-          <h1 style="font-family:'Raleway'; color:HotPink; font-size:30px">#DXB</h1>
+          <h1 style="font-family:Raleway; color:PaleTurquoise; font-size:64px" >Creative Connect</h1>
+          <h1 style="font-family:'Raleway'; color:Pink; font-size:30px">#DXB</h1>
 
           <p>A supportive platform for creatives in Dubai offering connection, learning, support and inspiration.</p>
           <a href="#" class="cta-button">Join us</a>
+        </div>
+        <div class="hero-image">
+            <img src="src/assets/art.webp" alt="Hero Image">
+        </div>
       </div>
+      
   </section>
 
 <!-- #about -->
@@ -81,7 +87,7 @@
                 </p>
             </div>
             <div class="about-image">
-                <img src="src/assets/test.jpg" alt="About Us">
+                <img src="src/assets/art_sup.png" alt="About Image">
             </div>
         </div>
     </div>
