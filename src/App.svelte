@@ -87,10 +87,39 @@
                 </p>
             </div>
             <div class="about-image">
-                <img src="src/assets/art_sup.png" alt="About Image">
+                <img src="src/assets/creativity.png" alt="About Image">
             </div>
         </div>
     </div>
+</section>
+
+<section class="token">
+    <div class = "token_heading"><h2>Creative winner of the month</h2></div>
+    <div class="nft">
+      <div class='main'>
+        <img class='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
+        <h2>Creative Winner</h2>
+        <p class='description'>Art & Design</p>
+        <div class='tokenInfo'>
+          <div class="price">
+            <ins>◘</ins>
+            <p>Name</p>
+          </div>
+          <div class="duration">
+            <ins>◷</ins>
+            <p>21/09/24</p>
+          </div>
+        </div>
+        <hr />
+        <div class='creator'>
+          <div class='wrapper'>
+            <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="Creator" />
+          </div>
+          <p><ins>Topic</ins> Music</p>
+        </div>
+      </div>
+
+    
 </section>
 
   <!-- Contact Section -->
@@ -125,6 +154,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 <!-- Footer Section -->
 <footer class="footer">
