@@ -1,4 +1,5 @@
 <script>
+  	import Marqueeck from '@arisbh/marqueeck';
   document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const navList = document.getElementById('nav-list');
@@ -7,6 +8,12 @@
         navList.classList.toggle('show');
     });
 });
+
+const options = {
+		direction: "left",
+		speed: 20,
+    gap: 80
+	};
 
 </script>
 
@@ -36,7 +43,7 @@
   <nav class="navbar">
     <div class="nav-container">
         <a href="#" class="logo">
-            <img src="src/assets/ccdxb.jpg" alt="Logo">
+            <img src="ccdxb.jpg" alt="Logo">
         </a>
         <div class="menu-toggle" id="menu-toggle">
             <div class="bar"></div>
@@ -44,16 +51,16 @@
             <div class="bar"></div>
         </div>
         <ul class="nav-list" id="nav-list">
-            <li class="nav-item"><a href="#">Home</a></li>
-            <li class="nav-item"><a href="#">About</a></li>
-            <li class="nav-item"><a href="#">Contact</a></li>
+            <li class="nav-item"><a href="#hero">Home</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
 
         </ul>
     </div>
 </nav>
 
 <!-- #hero -->
-    <section class="hero">
+    <section class="hero" id="hero" style="background-image: url('bg_image.svg');">
       <div class="hero-content">
         <div class="hero-text">
           <h1 style="font-family:'Raleway'">Welcome to</h1>
@@ -64,15 +71,30 @@
           <a href="#" class="cta-button">Join us</a>
         </div>
         <div class="hero-image">
-            <img src="src/assets/art.webp" alt="Hero Image">
+            <img src="art.webp" alt="Hero Image">
         </div>
       </div>
       
   </section>
 
+  <section>
+  <Marqueeck {options} 	--marqueeck-bg-color="rgb(112,128,144)" 
+	--marqueeck-text-color="hsl(var(--background))"
+	--marqueeck-padding-y="1.5rem">
+    <span >DXB</span>
+    <span >LHR</span>
+    <span >AHR</span>
+    <span >BYU</span>
+    <span >BOG</span>
+    <span >CAI</span>
+    <span >VAR</span>
+    <span >XMN</span>
+  </Marqueeck>
+</section>
+
 <!-- #about -->
   <!-- About Section -->
-  <section class="about">
+  <section class="about" id="about" style="background-image: url('dots.svg');">
     <div class="container">
         <div class="about-content">
             <div class="about-text">
@@ -87,13 +109,13 @@
                 </p>
             </div>
             <div class="about-image">
-                <img src="src/assets/creativity.png" alt="About Image">
+                <img src="creativity.png" alt="About Image">
             </div>
         </div>
     </div>
 </section>
 
-<section class="token">
+<section class="token" id="token" style="background-image: url('dots.svg');">
     <div class = "token_heading"><h2>Creative winner of the month</h2></div>
     <div class="nft">
       <div class='main'>
@@ -123,7 +145,7 @@
 </section>
 
   <!-- Contact Section -->
-  <section class="contact">
+  <section class="contact" id="contact" style="background-image: url('dots.svg');">
     <div class="container">
         <h2>Contact Us <br> <br></h2>
         <div class="contact-content">

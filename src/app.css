@@ -109,7 +109,7 @@ body {
 /* Hero Section Styles */
 .hero {
   /* background: linear-gradient(135deg, rgba(255, 0, 255, 0.8), rgba(0, 255, 255, 0.8));  */
-  background-image: url('src/assets/bg_image.svg');
+  /* background-image: url('bg_image.svg'); */
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -266,7 +266,7 @@ margin-top: 50px;
 
 .about {
   background: rgba(0, 0, 0, 0.4); /* Dark translucent background */
-  background-image: url('src/assets/dots.svg');
+  /* background-image: url('dots.svg'); */
   padding: 60px 20px;
   text-align: center;
   backdrop-filter: blur(10px); /* Glassmorphic effect */
@@ -340,7 +340,7 @@ margin-top: 50px;
 /* Contact Section Styles */
 .contact {
   background: rgba(0, 0, 0, 0.4); /* Dark translucent background */
-  background-image: url('src/assets/dots.svg');
+  /* background-image: url('dots.svg'); */
   padding: 60px 20px;
   text-align: center;
   backdrop-filter: blur(10px); /* Glassmorphic effect */
@@ -483,7 +483,7 @@ margin-top: 50px;
 /* Kyber */
 
 .token{
-  background-image: url('src/assets/dots.svg');
+  /* background-image: url('dots.svg'); */
 }
 
 .token_heading{

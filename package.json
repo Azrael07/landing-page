@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@svgr/rollup": "^8.1.0",
     "svelte": "^4.2.12",
     "vite": "^5.2.0"
   },
   "dependencies": {
+    "@arisbh/marqueeck": "^0.5.0",
     "flowbite-svelte": "^0.46.1",
     "svelte-navbar": "^0.0.122"
   }
