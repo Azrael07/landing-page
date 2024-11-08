@@ -86,8 +86,8 @@ body {
       position: absolute;
       top: 70px; /* Adjust based on your navbar height */
       left: 0;
-      background: rgba(32, 32, 32, 0.438); /* Translucent background */
-      backdrop-filter: blur(15px); /* Glassmorphic effect */
+      background: rgba(32, 32, 32, 0.87); /* Translucent background */
+      backdrop-filter: blur(25px); /* Glassmorphic effect */
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
@@ -119,11 +119,11 @@ body {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 150px;
-  -moz-box-shadow: inset 0px 750px 500px -500px #333;
-  -webkit-box-shadow: inset 0px 750px 500px -500px #333;
-  -o-box-shadow: inset 0px 750px 500px -500px #333;
-  box-shadow: inset 0px 750px 500px -500px #333;
+  margin-top: 170px;
+  -moz-box-shadow: inset 0px 950px 500px -500px #333;
+  -webkit-box-shadow: inset 0px 950px 500px -500px #333;
+  -o-box-shadow: inset 0px 950px 500px -500px #333;
+  box-shadow: inset 0px 950px 500px -500px #333;
 
 }
 
@@ -540,7 +540,7 @@ code {
       .price{
         display: flex;
         align-items: center;
-        color: #ee83e5;
+        color: #b183ee;
         font-weight: 700;
         ins{
           margin-left: -.3rem;

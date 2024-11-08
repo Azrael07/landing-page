@@ -1,5 +1,10 @@
 <script>
-  	import Marqueeck from '@arisbh/marqueeck';
+  import { onMount } from 'svelte';
+  // @ts-ignore
+  import emailjs from '@emailjs/browser';
+
+
+
   document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const navList = document.getElementById('nav-list');
@@ -14,6 +19,42 @@ const options = {
 		speed: 20,
     gap: 80
 	};
+
+//API
+
+// let posts = [];
+// onMount(async()=>{
+//   posts = await getPost()
+
+// })
+
+const getPost = async() =>{
+  const res = await fetch("https://script.googleusercontent.com/macros/echo?user_content_key=BK0v4nxQjfDeWbBXmihxr_k-aikOvNdYr55I5Uwl2hIhsLuQnwRCC_dlS1fghfCNsf--u_yyWHRwVIsNjmK-EKUsG0kcXxXeOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHayjLRpVDbGB-OUotDZWZPgqLokN-NPjXWVqkLCC29jA049guXy5ZORRNPAwMjt-faBwf12Hy0n-oadYPA7AnL3zEIjbqjkU-pOX2KnvcqMMGFZR6btdKBkCY8-paDNctvg&lib=Mbum4vK1UBQGVAhPrTFmiCEMqEnBOITdK")
+  const data =await res.json()
+  console.log(data)
+  return data
+
+}
+
+
+//Email form
+const sendEmail = (e) => {
+  emailjs
+    .sendForm('service_clp36fj', 'template_lo4w8tf', e.target, {
+      publicKey: 'u9YkLHakFlSMU9Kyw',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+    );
+    document.querySelector('form').reset();
+
+};
+
 
 </script>
 
@@ -77,20 +118,6 @@ const options = {
       
   </section>
 
-  <section>
-  <Marqueeck {options} 	--marqueeck-bg-color="rgb(112,128,144)" 
-	--marqueeck-text-color="hsl(var(--background))"
-	--marqueeck-padding-y="1.5rem">
-    <span >DXB</span>
-    <span >LHR</span>
-    <span >AHR</span>
-    <span >BYU</span>
-    <span >BOG</span>
-    <span >CAI</span>
-    <span >VAR</span>
-    <span >XMN</span>
-  </Marqueeck>
-</section>
 
 <!-- #about -->
   <!-- About Section -->
@@ -116,20 +143,45 @@ const options = {
 </section>
 
 <section class="token" id="token" style="background-image: url('dots.svg');">
-    <div class = "token_heading"><h2>Creative winner of the month</h2></div>
+    <div class = "token_heading"><h2>Upcoming Event</h2></div>
     <div class="nft">
       <div class='main'>
-        <img class='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-        <h2>Creative Winner</h2>
-        <p class='description'>Art & Design</p>
+        {#await getPost()}
+        <img class='tokenImage' src="">
+        {:then data}
+        <!-- {JSON.stringify(data)} -->
+        {#if data}
+             <img class='tokenImage' src="{data.data[0].Image}">
+        {/if}
+        {/await}
+        <h2>Creative Connect Event</h2>
+        <p class='description'>DXB</p>
         <div class='tokenInfo'>
           <div class="price">
             <ins>◘</ins>
-            <p>Name</p>
+
+            {#await getPost()}
+            <p>Loading...</p>
+            {:then data}
+            <!-- {JSON.stringify(data)} -->
+            {#if data}
+                <h2>{data.data[0].Time}</h2>
+            {/if}
+            {/await}
+
           </div>
           <div class="duration">
             <ins>◷</ins>
-            <p>21/09/24</p>
+
+            {#await getPost()}
+            <p>Loading...</p>
+            {:then data}
+            <!-- {JSON.stringify(data)} -->
+            {#if data}
+                <p>{data.data[0].Date}</p>
+            {/if}
+            {/await}
+
           </div>
         </div>
         <hr />
@@ -137,7 +189,18 @@ const options = {
           <div class='wrapper'>
             <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="Creator" />
           </div>
-          <p><ins>Topic</ins> Music</p>
+          <p><ins>Topic</ins> 
+            
+            
+            {#await getPost()}
+            <p>Loading...</p>
+            {:then data}
+            <!-- {JSON.stringify(data)} -->
+            {#if data}
+                <p>{data.data[0].Topic}</p>
+            {/if}
+            {/await}
+          </p>
         </div>
       </div>
 
@@ -150,21 +213,23 @@ const options = {
         <h2>Contact Us <br> <br></h2>
         <div class="contact-content">
             <div class="contact-form">
-                <form action="#" method="post">
+
+                <form on:submit|preventDefault={sendEmail}>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="user_name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="user_email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" value="Send" class="submit-button">Send Message</button>
                 </form>
+
             </div>
             <div class="contact-info">
                 <h3>Get in Touch</h3>
@@ -176,6 +241,8 @@ const options = {
         </div>
     </div>
 </section>
+
+
 
 
 
@@ -194,6 +261,8 @@ const options = {
         </div>
     </div>
 </footer>
+
+
 
 
 
